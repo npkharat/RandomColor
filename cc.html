@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change color</title>
+<style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    /* margin: 1.2rem; */
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    background-color: #333;
+    color: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 25rem;
+    text-align: center;
+   
+    /* border-radius: 1.2rem; */
+    border: 2px solid black;
+    margin: 1px;
+   
+    
+}
+button{
+    position: relative;
+    /* margin: 1.2rem; */
+    padding: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 0 0px 15px 15px ;
+    cursor: pointer;
+    transition-duration: 1s;
+    transition-property: margin;
+    /* border: 3px solid black; */
+
+
+}
+
+button:hover{
+    border: 3px solid black;
+     margin: 1.2rem 0;
+   
+   
+}
+
+</style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Changed Color <span>rgb(255,255,255)</span></h1>
+            <button id="btn">Change</button>
+        </div>
+    </main>
+    <script>
+        let btn=document.querySelector("#btn")
+let body=document.body
+let span=document.querySelector("span")
+// console.log(span.textContent)
+
+let getRandomColor= ()=>{
+    let red=Math.floor(Math.random()*256)
+    let green=Math.floor(Math.random()*256)
+    let blue=Math.floor(Math.random()*256)
+    let randomColor=`rgb( ${red},${green},${blue}) `
+    return randomColor;
+
+}
+
+btn.addEventListener("click",()=>{
+    body.style.backgroundColor=getRandomColor()
+    console.log(getRandomColor())
+    span.textContent=getRandomColor()
+    
+})
+
+
+    </script>
+    
+</body>
+</html>
